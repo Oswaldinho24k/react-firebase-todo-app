@@ -56,7 +56,7 @@ select {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  padding-left: $spacing-l;
+  padding-left: $spacing-xl;
   border: none;
 }
 
@@ -112,14 +112,14 @@ select {
     background-color: $urgent-color;
   }
   & .todoContent {
-    width: 55%;
+    width: 60%;
     margin: 0;
     @media (min-width: 768px) {
       width: 75%;
     }
   }
   & div button {
-    font-size: $spacing-s;
+    font-size: $spacing-xs;
     @media (min-width: 768px) {
       font-size: $spacing-m;
     }

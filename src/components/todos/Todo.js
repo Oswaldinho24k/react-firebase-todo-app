@@ -16,10 +16,10 @@ function Todo({ todo, index, completeTodo, removeTodo, updateTodo }) {
         <button onClick={() => completeTodo(index)}>
           {isCompleted ? <FaList /> : <FaCheck />}
         </button>
-        <button onClick={() => updateTodo(index)}>
+        <button onClick={() => updateTodo(todo)}>
           <FaPen />
         </button>
-        <button onClick={() => removeTodo(index)}>
+        <button onClick={() => removeTodo(todo)}>
           <FaTrash />
         </button>
       </div>

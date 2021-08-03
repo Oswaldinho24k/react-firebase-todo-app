@@ -19,13 +19,27 @@ firebase.initializeApp(config);
 export const firestore = firebase.firestore();
 
 //create Todo
-export const createTodo = (todo) => {
+export const saveTodo = (todo) => {
+  const id = todo.id || firestore.collection("todos").doc().id;
   return firestore
     .collection("todos")
-    .add(todo)
+    .doc(id)
+    .set({ ...todo, id })
+    .then((d) => {
+      console.log(d);
+    })
+    .catch((e) => console.log(e));
+};
+
+export const deleteTodo = (todo) => {
+  return firestore
+    .collection("todos")
+    .doc(todo.id)
+    .delete(todo)
     .then((doc) => {
       console.log(doc);
-    });
+    })
+    .catch((e) => console.log(e));
 };
 
 //gmail Login
@@ -37,5 +51,6 @@ export const gmailLogin = () => {
     .then((res) => {
       localStorage.setItem("user", JSON.stringify(res.user));
       return res.user;
-    });
+    })
+    .catch((e) => console.log(e));
 };

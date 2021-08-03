@@ -1,25 +1,20 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Todos from "./pages/Todos";
 import Auth from "./pages/Auth";
 
 import "./App.scss";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
+import PrivateRoute from "./components/common/PrivateRoute";
 
 function App() {
-  const currentUser = JSON.parse(localStorage.getItem("user"));
   return (
     <div className="app">
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          {currentUser ? <Redirect to="/auth" /> : <Todos />}
-        </Route>
-        {/* <Route path="/all">
-          <Todos />
-        </Route> */}
-        <Route path="/auth">
+        <PrivateRoute component={Todos} path="/" exact />
+        <Route path="/login">
           <Auth />
         </Route>
         <Route exact path="/">

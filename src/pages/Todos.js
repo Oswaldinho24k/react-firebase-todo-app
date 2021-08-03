@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import TodoForm from "../components/todos/TodoForm";
 import TodoList from "../components/todos/TodoList";
 import Filters from "../components/todos/Filters";
-import { firestore, createTodo } from "../services/firebase";
+import { firestore, saveTodo, deleteTodo } from "../services/firebase";
 
 function Todos() {
   const [todos, setTodos] = useState([]);
@@ -14,7 +14,7 @@ function Todos() {
   useEffect(() => {
     firestore
       .collection("todos")
-      .where("user", "==", currentUser.uid)
+      .where("user", "==", currentUser?.uid)
       .onSnapshot((querySnapshot) => {
         const todos = [];
         querySnapshot.forEach((doc) => todos.push(doc.data()));
@@ -23,7 +23,7 @@ function Todos() {
   }, []);
 
   const addTodo = (text) => {
-    createTodo({
+    saveTodo({
       text,
       isCompleted: false,
       isUrgent: false,
@@ -38,10 +38,8 @@ function Todos() {
     setTodos(newTodos);
   };
 
-  const removeTodo = (index) => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+  const removeTodo = (todo) => {
+    deleteTodo(todo);
   };
 
   const handleFilter = (e) => {
