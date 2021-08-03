@@ -25,9 +25,7 @@ export const saveTodo = (todo) => {
     .collection("todos")
     .doc(id)
     .set({ ...todo, id })
-    .then((d) => {
-      console.log(d);
-    })
+    .then((d) => {})
     .catch((e) => console.log(e));
 };
 
@@ -36,9 +34,7 @@ export const deleteTodo = (todo) => {
     .collection("todos")
     .doc(todo.id)
     .delete(todo)
-    .then((doc) => {
-      console.log(doc);
-    })
+    .then((doc) => {})
     .catch((e) => console.log(e));
 };
 

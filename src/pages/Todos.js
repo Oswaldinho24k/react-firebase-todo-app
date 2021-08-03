@@ -20,7 +20,7 @@ function Todos() {
         querySnapshot.forEach((doc) => todos.push(doc.data()));
         setTodos(todos);
       });
-  }, []);
+  });
 
   const addTodo = (text) => {
     saveTodo({

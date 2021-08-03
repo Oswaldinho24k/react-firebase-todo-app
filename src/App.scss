@@ -7,6 +7,7 @@ $spacing-s: 0.75rem;
 $spacing-m: 1rem;
 $spacing-l: 1.25rem;
 $spacing-xl: 1.5rem;
+$spacing-xxl: 2rem;
 
 * {
   outline: none;
@@ -66,7 +67,7 @@ select {
 }
 
 .divider {
-  margin: 0 $spacing-s;
+  margin: 0 $spacing-xs;
 }
 
 //todo-form
@@ -85,6 +86,7 @@ select {
 .todo-list {
   width: 100%;
   height: calc(100vh - 218px);
+  margin-top: $spacing-xs;
   overflow-y: auto;
   box-sizing: border-box;
 }
@@ -155,9 +157,12 @@ select {
   color: $secondary-color;
   height: 60px;
   box-sizing: border-box;
-  margin-bottom: $spacing-xs;
   @media (min-width: 768px) {
     padding: $spacing-xs $spacing-xl;
+  }
+  & .userImage {
+    width: 30px;
+    border-radius: 50%;
   }
   & div {
     display: flex;
@@ -165,6 +170,7 @@ select {
   }
   & div span {
     font-size: $spacing-m;
+    margin: 0 $spacing-xs;
   }
   & a {
     text-decoration: none;
@@ -201,4 +207,24 @@ select {
   color: $secondary-color;
   height: 30px;
   box-sizing: border-box;
+}
+
+//auth
+.auth {
+  height: calc(100vh - 90px);
+  padding: $spacing-xl;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & button {
+    width: 80%;
+    @media (min-width: 768px) {
+      width: 30%;
+    }
+  }
+  & h1 {
+    font-size: $spacing-xxl;
+  }
 }
