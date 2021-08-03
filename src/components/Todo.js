@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import {
-  IoIosTrash,
-  IoIosCheckmarkCircle,
-  IoMdBackspace,
-} from "react-icons/io";
+import React from "react";
 
-function Todo({ todo, index, completeTodo, removeTodo }) {
-  const { isCompleted, text } = todo;
+import { FaTrash, FaPen, FaCheck, FaList } from "react-icons/fa";
+
+function Todo({ todo, index, completeTodo, removeTodo, updateTodo }) {
+  const { isCompleted, text, isUrgent, createdAt } = todo;
   return (
     <div className={`todo ${isCompleted && "todo-completed"}`}>
-      <p>{text}</p>
+      {isUrgent && <span className="tag" />}
+      <div className="todoContent">
+        <p className="todoText">{text}</p>
+        <span className="todoDate">{createdAt.toDateString()}</span>
+      </div>
       <div>
         <button onClick={() => completeTodo(index)}>
-          {isCompleted ? <IoMdBackspace /> : <IoIosCheckmarkCircle />}
+          {isCompleted ? <FaList /> : <FaCheck />}
+        </button>
+        <button onClick={() => updateTodo(index)}>
+          <FaPen />
         </button>
         <button onClick={() => removeTodo(index)}>
-          <IoIosTrash />
+          <FaTrash />
         </button>
       </div>
     </div>

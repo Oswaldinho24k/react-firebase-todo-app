@@ -1,7 +1,7 @@
 import React from "react";
 import { IoIosHeart } from "react-icons/io";
 
-function Footer({}) {
+function Footer() {
   return (
     <div className="footer">
       Made with <IoIosHeart /> by Oswaldinho

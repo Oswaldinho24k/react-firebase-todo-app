@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoIosAddCircle } from "react-icons/io";
+import { FaPlusCircle } from "react-icons/fa";
 
 function TodoForm({ addTodo }) {
   const [value, setValue] = useState("");
@@ -25,7 +25,7 @@ function TodoForm({ addTodo }) {
         />
         <button type="submit" onClick={handleSubmit}>
           {" "}
-          <IoIosAddCircle />
+          <FaPlusCircle />
         </button>
       </form>
     </div>

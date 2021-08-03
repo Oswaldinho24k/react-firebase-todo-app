@@ -1,11 +1,19 @@
 import React from "react";
-import { IoIosListBox } from "react-icons/io";
+import { FaListAlt, FaUserAlt } from "react-icons/fa";
 
-function Navbar({}) {
+function Navbar() {
   return (
     <div className="navbar">
       <div>
-        <IoIosListBox /> Tasky
+        <FaListAlt /> Tasky
+      </div>
+
+      <div>
+        <span>
+          <FaUserAlt /> User
+        </span>
+        <div className="divider">|</div>
+        <span>Logout</span>
       </div>
     </div>
   );

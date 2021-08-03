@@ -1,5 +1,6 @@
-$primary-color: cadetblue;
+$primary-color: #7f53ac;
 $secondary-color: white;
+$urgent-color: red;
 $border-color: #e3e3e3;
 $spacing-xs: 0.25rem;
 $spacing-s: 0.5rem;
@@ -19,6 +20,7 @@ body {
   height: 100vh;
 }
 
+//components
 .container {
   display: flex;
   flex-direction: column;
@@ -40,8 +42,34 @@ button {
   cursor: pointer;
 }
 
-//todo-form
+input {
+  width: 100%;
+  padding: $spacing-s;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+}
 
+select {
+  width: 100%;
+  padding: $spacing-s;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding-left: $spacing-l;
+  border: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.divider {
+  margin: 0 $spacing-m;
+}
+
+//todo-form
 .todo-form {
   width: 100%;
   height: 60px;
@@ -51,25 +79,17 @@ button {
     display: flex;
     align-items: center;
   }
-  & form input {
-    width: 100%;
-    padding: $spacing-s;
-    border-radius: 4px;
-    border: 1px solid $border-color;
-    box-sizing: border-box;
-  }
 }
 
 //list
 .todo-list {
-  border-radius: 4px;
   width: 100%;
-  height: calc(100vh - 154px);
+  height: calc(100vh - 214px);
   overflow-y: auto;
   box-sizing: border-box;
 }
 
-//task
+//tasks
 .todo {
   background: #fff;
   padding: $spacing-s;
@@ -80,9 +100,36 @@ button {
   justify-content: space-between;
   border-bottom: 1px solid $border-color;
   transition: all 0.3s ease;
-  & p {
-    width: 70%;
+  position: relative;
+  & .tag {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $urgent-color;
+  }
+  & .todoContent {
+    width: 65%;
     margin: 0;
+    @media (min-width: 768px) {
+      width: 80%;
+    }
+  }
+  & div button {
+    margin-bottom: $spacing-s;
+    font-size: $spacing-s;
+    @media (min-width: 768px) {
+      font-size: $spacing-m;
+    }
+  }
+  & .todoText {
+    margin: 0;
+  }
+  & .todoDate {
+    color: $primary-color;
+    font-size: $spacing-s;
   }
 }
 
@@ -92,22 +139,44 @@ button {
 }
 
 // Nav
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $spacing-s;
   font-size: $spacing-l;
+  padding: $spacing-s;
   background: $primary-color;
   color: $secondary-color;
   height: 60px;
   box-sizing: border-box;
   margin-bottom: $spacing-xs;
+  & div {
+    display: flex;
+    align-items: center;
+  }
+  & div span {
+    font-size: $spacing-m;
+  }
+}
+
+//Filters
+.filters {
+  height: 60px;
+  padding: $spacing-s;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  & div {
+    position: relative;
+  }
+  & .icon {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+  }
 }
 
 // Footer
-
 .footer {
   display: flex;
   justify-content: center;
