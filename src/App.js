@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import TodoForm from "./components/TodoForm";
 import "./App.scss";
 import TodoList from "./components/TodoList";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -18,7 +20,6 @@ function App() {
       isCompleted: false,
     },
   ]);
-
   const addTodo = (text) => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
@@ -38,8 +39,8 @@ function App() {
 
   return (
     <div className="app">
-      <div className="todo-list">
-        <h1 className="title">Create a Todo with React Hooks</h1>
+      <Navbar />
+      <div className="container">
         <TodoList
           completeTodo={completeTodo}
           removeTodo={removeTodo}
@@ -47,6 +48,7 @@ function App() {
         />
         <TodoForm addTodo={addTodo} />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,3 +1,121 @@
+$primary-color: cadetblue;
+$secondary-color: white;
+$border-color: #e3e3e3;
+$spacing-xs: 0.25rem;
+$spacing-s: 0.5rem;
+$spacing-m: 1rem;
+$spacing-l: 1.5rem;
+$spacing-xl: 2rem;
+
 * {
   outline: none;
+  font-family: Avenir;
+}
+html,
+body {
+  margin: 0;
+}
+.app {
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 $spacing-xs;
+  @media (min-width: 768px) {
+    padding: 0 $spacing-xl;
+  }
+}
+
+button {
+  padding: $spacing-s;
+  padding-bottom: $spacing-xs;
+  border-radius: 4px;
+  margin-left: $spacing-s;
+  font-size: $spacing-m;
+  background: $primary-color;
+  color: $secondary-color;
+  border: none;
+  cursor: pointer;
+}
+
+//todo-form
+
+.todo-form {
+  width: 100%;
+  height: 60px;
+  padding: $spacing-s;
+  box-sizing: border-box;
+  & form {
+    display: flex;
+    align-items: center;
+  }
+  & form input {
+    width: 100%;
+    padding: $spacing-s;
+    border-radius: 4px;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+  }
+}
+
+//list
+.todo-list {
+  border-radius: 4px;
+  width: 100%;
+  height: calc(100vh - 154px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+//task
+.todo {
+  background: #fff;
+  padding: $spacing-s;
+  font-size: $spacing-m;
+  margin-bottom: $spacing-s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+  transition: all 0.3s ease;
+  & p {
+    width: 70%;
+    margin: 0;
+  }
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  color: $border-color;
+}
+
+// Nav
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-s;
+  font-size: $spacing-l;
+  background: $primary-color;
+  color: $secondary-color;
+  height: 60px;
+  box-sizing: border-box;
+  margin-bottom: $spacing-xs;
+}
+
+// Footer
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-s;
+  font-size: $spacing-m;
+  background: $primary-color;
+  color: $secondary-color;
+  height: 30px;
+  box-sizing: border-box;
 }
