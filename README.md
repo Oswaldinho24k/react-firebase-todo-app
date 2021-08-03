@@ -1,6 +1,4 @@
-# react-hooks-todo-app
-
-A todo App with React hooks
+# react firebase todo app
 
 Feature:
 
@@ -8,8 +6,6 @@ Create + Read + Update + Delete
 
 ## Install:
 
-$  git clone https://github.com/ShuvoHabib/react-hooks-todo-app.git
+$ yarn
 
-$  yarn
-
-$  yarn start
+$ yarn start

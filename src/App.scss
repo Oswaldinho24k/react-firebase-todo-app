@@ -2,11 +2,11 @@ $primary-color: #7f53ac;
 $secondary-color: white;
 $urgent-color: red;
 $border-color: #e3e3e3;
-$spacing-xs: 0.25rem;
-$spacing-s: 0.5rem;
+$spacing-xs: 0.5rem;
+$spacing-s: 0.75rem;
 $spacing-m: 1rem;
-$spacing-l: 1.5rem;
-$spacing-xl: 2rem;
+$spacing-l: 1.25rem;
+$spacing-xl: 1.5rem;
 
 * {
   outline: none;
@@ -34,7 +34,7 @@ button {
   padding: $spacing-s;
   padding-bottom: $spacing-xs;
   border-radius: 4px;
-  margin-left: $spacing-s;
+  margin-left: $spacing-xs;
   font-size: $spacing-m;
   background: $primary-color;
   color: $secondary-color;
@@ -52,7 +52,7 @@ input {
 
 select {
   width: 100%;
-  padding: $spacing-s;
+  padding: $spacing-xs;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -66,14 +66,14 @@ select {
 }
 
 .divider {
-  margin: 0 $spacing-m;
+  margin: 0 $spacing-s;
 }
 
 //todo-form
 .todo-form {
   width: 100%;
   height: 60px;
-  padding: $spacing-s;
+  padding: $spacing-s 0;
   box-sizing: border-box;
   & form {
     display: flex;
@@ -84,7 +84,7 @@ select {
 //list
 .todo-list {
   width: 100%;
-  height: calc(100vh - 214px);
+  height: calc(100vh - 218px);
   overflow-y: auto;
   box-sizing: border-box;
 }
@@ -92,8 +92,8 @@ select {
 //tasks
 .todo {
   background: #fff;
-  padding: $spacing-s;
-  font-size: $spacing-m;
+  padding: $spacing-s 0;
+  font-size: $spacing-s;
   margin-bottom: $spacing-s;
   display: flex;
   align-items: center;
@@ -101,24 +101,24 @@ select {
   border-bottom: 1px solid $border-color;
   transition: all 0.3s ease;
   position: relative;
+
   & .tag {
     border-radius: 50%;
     width: 10px;
     height: 10px;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     background-color: $urgent-color;
   }
   & .todoContent {
-    width: 65%;
+    width: 55%;
     margin: 0;
     @media (min-width: 768px) {
-      width: 80%;
+      width: 75%;
     }
   }
   & div button {
-    margin-bottom: $spacing-s;
     font-size: $spacing-s;
     @media (min-width: 768px) {
       font-size: $spacing-m;
@@ -126,10 +126,16 @@ select {
   }
   & .todoText {
     margin: 0;
+    @media (min-width: 768px) {
+      font-size: $spacing-m;
+    }
   }
   & .todoDate {
     color: $primary-color;
-    font-size: $spacing-s;
+    font-size: $spacing-xs;
+    @media (min-width: 768px) {
+      font-size: $spacing-s;
+    }
   }
 }
 
@@ -144,12 +150,15 @@ select {
   justify-content: space-between;
   align-items: center;
   font-size: $spacing-l;
-  padding: $spacing-s;
+  padding: $spacing-xs;
   background: $primary-color;
   color: $secondary-color;
   height: 60px;
   box-sizing: border-box;
   margin-bottom: $spacing-xs;
+  @media (min-width: 768px) {
+    padding: $spacing-xs $spacing-xl;
+  }
   & div {
     display: flex;
     align-items: center;
@@ -157,17 +166,22 @@ select {
   & div span {
     font-size: $spacing-m;
   }
+  & a {
+    text-decoration: none;
+    color: $secondary-color;
+  }
 }
 
 //Filters
 .filters {
   height: 60px;
-  padding: $spacing-s;
+  padding: $spacing-xs 0;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   & div {
     position: relative;
+    margin-left: $spacing-m;
   }
   & .icon {
     position: absolute;
@@ -181,8 +195,8 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: $spacing-s;
-  font-size: $spacing-m;
+  padding: $spacing-xs;
+  font-size: $spacing-s;
   background: $primary-color;
   color: $secondary-color;
   height: 30px;
