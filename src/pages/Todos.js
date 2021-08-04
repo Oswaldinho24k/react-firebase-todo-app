@@ -32,12 +32,6 @@ function Todos() {
     });
   };
 
-  const completeTodo = (index) => {
-    const newTodos = [...todos];
-    newTodos[index].isCompleted = !newTodos[index].isCompleted;
-    setTodos(newTodos);
-  };
-
   const removeTodo = (todo) => {
     deleteTodo(todo);
   };
@@ -50,9 +44,11 @@ function Todos() {
     setSort(e.target.value);
   };
 
-  //changeUrgency
-
-  //updateTodo
+  const completeTodo = (index) => {
+    // const newTodos = [...todos];
+    // newTodos[index].isCompleted = !newTodos[index].isCompleted;
+    // setTodos(newTodos);
+  };
 
   const filteredTodos = todos.filter((todo) => {
     if (filter === "Urgent") return todo.isUrgent;
@@ -79,9 +75,10 @@ function Todos() {
       <TodoList
         completeTodo={completeTodo}
         removeTodo={removeTodo}
+        updateTodo={saveTodo}
         todos={filteredTodos}
       />
-      <TodoForm addTodo={addTodo} />
+      <TodoForm handleSubmit={addTodo} />
     </div>
   );
 }

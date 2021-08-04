@@ -43,6 +43,11 @@ button {
   cursor: pointer;
 }
 
+.isDisabled {
+  cursor: no-drop;
+  opacity: 0.5;
+}
+
 input {
   width: 100%;
   padding: $spacing-s;
@@ -74,7 +79,7 @@ select {
 .todo-form {
   width: 100%;
   height: 60px;
-  padding: $spacing-s 0;
+  padding: $spacing-xs 0;
   box-sizing: border-box;
   & form {
     display: flex;
