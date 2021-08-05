@@ -30,8 +30,8 @@ function Todo({ todo, index, completeTodo, removeTodo, updateTodo }) {
       </div>
       <div>
         <button
-          className={isUpdating && "isDisabled"}
-          disabled={isUpdating}
+          className={true && "isDisabled"}
+          disabled={true}
           onClick={() => completeTodo(index)}
         >
           {isCompleted ? <FaList /> : <FaCheck />}

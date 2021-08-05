@@ -18,7 +18,7 @@ function Auth() {
       <h1>
         <FaListAlt /> Tasky
       </h1>
-      <button onClick={handleClick}>Inicia</button>
+      <button onClick={handleClick}>Log in</button>
     </div>
   );
 }

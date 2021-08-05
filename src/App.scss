@@ -58,10 +58,10 @@ input {
 
 select {
   width: 100%;
-  padding: $spacing-xs;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  padding: $spacing-xs;
   padding-left: $spacing-xl;
   border: none;
 }
@@ -72,7 +72,7 @@ select {
 }
 
 .divider {
-  margin: 0 $spacing-xs;
+  margin: 0;
 }
 
 //todo-form
@@ -90,7 +90,7 @@ select {
 //list
 .todo-list {
   width: 100%;
-  height: calc(100vh - 218px);
+  height: calc(100vh - 209px);
   margin-top: $spacing-xs;
   overflow-y: auto;
   box-sizing: border-box;
@@ -99,7 +99,7 @@ select {
 //tasks
 .todo {
   background: #fff;
-  padding: $spacing-s 0;
+  padding: $spacing-xs 0;
   font-size: $spacing-s;
   margin-bottom: $spacing-s;
   display: flex;
@@ -185,14 +185,13 @@ select {
 
 //Filters
 .filters {
-  height: 60px;
   padding: $spacing-xs 0;
+  border-bottom: 1px solid $border-color;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
   & div {
     position: relative;
-    margin-left: $spacing-m;
   }
   & .icon {
     position: absolute;
