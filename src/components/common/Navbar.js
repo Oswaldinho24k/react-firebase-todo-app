@@ -33,7 +33,9 @@ function Navbar() {
       {user && (
         <div>
           <img className="userImage" alt="userImage" src={user?.photoURL} />
-          <span> {`${user?.displayName.slice(0, 10)}.`}</span>
+          <Link to="todos">
+            <span> {`${user?.displayName.slice(0, 10)}.`}</span>
+          </Link>
           <div className="divider">|</div>
           <span onClick={logout}>Logout</span>
         </div>

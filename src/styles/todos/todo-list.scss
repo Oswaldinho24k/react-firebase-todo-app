@@ -1,7 +1,15 @@
 .todo-list {
   width: 100%;
-  height: calc(100vh - 209px);
+  height: calc(100vh - 213px);
   margin-top: $spacing-s;
   overflow-y: auto;
   box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 $spacing-xs;
+  @media (min-width: 768px) {
+    padding: 0 $spacing-xl;
+  }
 }

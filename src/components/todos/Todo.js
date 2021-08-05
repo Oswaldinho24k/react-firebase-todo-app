@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import { FaTrash, FaPen, FaCheck, FaList, FaSave } from "react-icons/fa";
 import TodoForm from "./TodoForm";
 
-function Todo({ todo, removeTodo, updateTodo }) {
+function Todo({ todo, removeTodo, updateTodo, isWorldsTodo }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const { isCompleted, text, isUrgent, createdAt } = todo;
   const date = new Date(createdAt).toDateString();
+  const isDisabled = isWorldsTodo || isUpdating;
 
   const handleUpdateText = (text) => {
     updateTodo({ ...todo, text });
@@ -55,22 +56,22 @@ function Todo({ todo, removeTodo, updateTodo }) {
       </div>
       <div className="actions">
         <button
-          className={`greenButton ${isUpdating && "isDisabled"}`}
-          disabled={isUpdating}
+          className={`greenButton ${isDisabled && "isDisabled"}`}
+          disabled={isDisabled}
           onClick={changeTodoStatus}
         >
           {isCompleted ? <FaList /> : <FaCheck />}
         </button>
         <button
-          className={`${isUpdating && "isDisabled"}`}
-          disabled={isUpdating}
+          className={`${isDisabled && "isDisabled"}`}
+          disabled={isDisabled}
           onClick={() => setIsUpdating(true)}
         >
           <FaPen />
         </button>
         <button
-          className={`redButton ${isUpdating && "isDisabled"}`}
-          disabled={isUpdating}
+          className={`redButton ${isDisabled && "isDisabled"}`}
+          disabled={isDisabled}
           onClick={() => removeTodo(todo)}
         >
           <FaTrash />

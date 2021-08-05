@@ -19,11 +19,12 @@ export const firestore = firebase.firestore();
 //create Todo
 export const saveTodo = (todo) => {
   const id = todo.id || firestore.collection("todos").doc().id;
+  const todoObject = { ...todo, id };
   return firestore
     .collection("todos")
     .doc(id)
-    .set({ ...todo, id })
-    .then((doc) => {})
+    .set(todoObject)
+    .then(() => todoObject)
     .catch((e) => console.log(e));
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-function TodoList({ completeTodo, removeTodo, updateTodo, todos }) {
+function TodoList({ removeTodo, updateTodo, todos, isWorldsTodo }) {
   return (
     <div className="todo-list">
       {todos.map((todo, index) => (
@@ -11,6 +11,7 @@ function TodoList({ completeTodo, removeTodo, updateTodo, todos }) {
           todo={todo}
           removeTodo={removeTodo}
           updateTodo={updateTodo}
+          isWorldsTodo={isWorldsTodo}
         />
       ))}
     </div>

@@ -1,3 +1,11 @@
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & h2 {
+    margin: 0;
+  }
+}
 .filters {
   padding: $spacing-xs 0;
   border-bottom: 1px solid $border-color;

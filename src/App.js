@@ -16,6 +16,9 @@ function App() {
         <Route path="/login">
           <Auth />
         </Route>
+        <Route exact path="/todos">
+          <Todos />
+        </Route>
         <Route exact path="/">
           <Todos />
         </Route>

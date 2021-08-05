@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 
-function TodoForm({ handleSubmit, defaultValue = "", submitIcon }) {
+function TodoForm({
+  handleSubmit,
+  defaultValue = "",
+  submitIcon,
+  isWorldsTodo,
+}) {
   const [value, setValue] = useState(defaultValue);
 
   const onSubmit = (e) => {
@@ -15,6 +20,7 @@ function TodoForm({ handleSubmit, defaultValue = "", submitIcon }) {
     <div className="todo-form">
       <form onSubmit={onSubmit}>
         <input
+          disabled={isWorldsTodo}
           type="text"
           className="input"
           rows="1"
@@ -22,8 +28,14 @@ function TodoForm({ handleSubmit, defaultValue = "", submitIcon }) {
           onChange={(e) => setValue(e.target.value)}
           placeholder=" Enter your task"
           required
+          className={`${isWorldsTodo && "isDisabled"}`}
         />
-        <button type="submit" onClick={onSubmit}>
+        <button
+          type="submit"
+          onClick={onSubmit}
+          disabled={isWorldsTodo}
+          className={`${isWorldsTodo && "isDisabled"}`}
+        >
           {" "}
           {submitIcon ? submitIcon : <FaPlusCircle />}
         </button>
