@@ -96,6 +96,7 @@ select {
   padding: $spacing-xs 0;
   box-sizing: border-box;
   & form {
+    width: 100%;
     display: flex;
     align-items: center;
   }
@@ -105,7 +106,7 @@ select {
 .todo-list {
   width: 100%;
   height: calc(100vh - 209px);
-  margin-top: $spacing-xs;
+  margin-top: $spacing-s;
   overflow-y: auto;
   box-sizing: border-box;
 }
@@ -113,7 +114,6 @@ select {
 //tasks
 .todo {
   background: #fff;
-  padding: $spacing-xs 0;
   font-size: $spacing-m;
   margin-bottom: $spacing-s;
   display: flex;
@@ -122,6 +122,9 @@ select {
   border-bottom: 1px solid $border-color;
   transition: all 0.3s ease;
   position: relative;
+  @media (min-width: 768px) {
+    padding: $spacing-xs 0;
+  }
   & .tag {
     border-radius: 50%;
     width: 10px;
@@ -232,6 +235,7 @@ select {
   justify-content: flex-end;
   & div {
     position: relative;
+    margin-left: $spacing-xs;
   }
   & .icon {
     position: absolute;
