@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { FaPlusCircle } from "react-icons/fa";
 
-function TodoForm({ handleSubmit, defaultValue = "" }) {
+function TodoForm({ handleSubmit, defaultValue = "", submitIcon }) {
   const [value, setValue] = useState(defaultValue);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(value);
     if (!value) return;
     handleSubmit(value);
     setValue("");
@@ -26,7 +25,7 @@ function TodoForm({ handleSubmit, defaultValue = "" }) {
         />
         <button type="submit" onClick={onSubmit}>
           {" "}
-          <FaPlusCircle />
+          {submitIcon ? submitIcon : <FaPlusCircle />}
         </button>
       </form>
     </div>

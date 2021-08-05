@@ -15,7 +15,8 @@ function Todos() {
     firestore
       .collection("todos")
       .where("user", "==", currentUser?.uid)
-      .onSnapshot((querySnapshot) => {
+      .get()
+      .then((querySnapshot) => {
         const todos = [];
         querySnapshot.forEach((doc) => todos.push(doc.data()));
         setTodos(todos);
@@ -44,10 +45,15 @@ function Todos() {
     setSort(e.target.value);
   };
 
-  const completeTodo = (index) => {
-    // const newTodos = [...todos];
-    // newTodos[index].isCompleted = !newTodos[index].isCompleted;
-    // setTodos(newTodos);
+  const updateTodo = (todo) => {
+    saveTodo(todo).then(() => {
+      const updatedTodos = todos.map((t) => {
+        console.log(t.id === todo.id);
+        if (t.id === todo.id) return todo;
+        else return t;
+      });
+      setTodos(updatedTodos);
+    });
   };
 
   const filteredTodos = todos.filter((todo) => {
@@ -73,9 +79,8 @@ function Todos() {
         sort={sort}
       />
       <TodoList
-        completeTodo={completeTodo}
         removeTodo={removeTodo}
-        updateTodo={saveTodo}
+        updateTodo={updateTodo}
         todos={filteredTodos}
       />
       <TodoForm handleSubmit={addTodo} />

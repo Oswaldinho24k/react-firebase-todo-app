@@ -9,7 +9,6 @@ function TodoList({ completeTodo, removeTodo, updateTodo, todos }) {
           key={index}
           index={index}
           todo={todo}
-          completeTodo={completeTodo}
           removeTodo={removeTodo}
           updateTodo={updateTodo}
         />
