@@ -6,3 +6,5 @@ build
 .firebase
 .firebaserc
 firestore.rules
+
+.env
