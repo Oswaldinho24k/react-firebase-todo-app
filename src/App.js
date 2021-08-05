@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import Todos from "./pages/Todos";
 import Auth from "./pages/Auth";
 
-import "./App.scss";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import PrivateRoute from "./components/common/PrivateRoute";

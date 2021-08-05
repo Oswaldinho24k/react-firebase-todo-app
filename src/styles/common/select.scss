@@ -1,0 +1,9 @@
+select {
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: $spacing-xs;
+  padding-left: $spacing-xl;
+  border: none;
+}

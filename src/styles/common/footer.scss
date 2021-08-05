@@ -1,0 +1,12 @@
+// Footer
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-xs;
+  font-size: $spacing-s;
+  background: $primary-color;
+  color: $secondary-color;
+  height: 30px;
+  box-sizing: border-box;
+}

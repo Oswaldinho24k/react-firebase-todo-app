@@ -23,7 +23,7 @@ function Todo({ todo, removeTodo, updateTodo }) {
 
   return (
     <div className={"todo"}>
-      {isUrgent && <span className="tag" />}
+      {isUrgent && <span className="tag">Urgent</span>}
       <div className="todoContent">
         {isUpdating ? (
           <div className="editTodo">
@@ -34,7 +34,7 @@ function Todo({ todo, removeTodo, updateTodo }) {
                 type="checkbox"
                 id="isUrgent"
                 name="isUrgent"
-                value={isUrgent}
+                checked={isUrgent}
               />
               <label htmlFor="isUrgent"> Urgent</label>
             </div>

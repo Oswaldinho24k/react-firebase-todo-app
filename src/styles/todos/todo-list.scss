@@ -1,0 +1,7 @@
+.todo-list {
+  width: 100%;
+  height: calc(100vh - 209px);
+  margin-top: $spacing-s;
+  overflow-y: auto;
+  box-sizing: border-box;
+}

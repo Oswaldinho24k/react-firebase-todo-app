@@ -1,0 +1,28 @@
+button {
+  padding: $spacing-s;
+  padding-bottom: $spacing-xs;
+  border-radius: 4px;
+  margin-left: $spacing-xs;
+  font-size: $spacing-m;
+  background: $primary-color;
+  color: $secondary-color;
+  border: none;
+  cursor: pointer;
+}
+
+.redButton {
+  background-color: $red-color;
+}
+
+.greenButton {
+  background-color: $green-color;
+}
+
+.blueButton {
+  background-color: $blue-color;
+}
+
+.isDisabled {
+  cursor: no-drop;
+  opacity: 0.5;
+}

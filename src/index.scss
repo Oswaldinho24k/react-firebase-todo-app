@@ -1,0 +1,32 @@
+$primary-color: #7f53ac;
+$secondary-color: white;
+$red-color: #c70000;
+$blue-color: #1c5cc8;
+$green-color: #00ab66;
+$border-color: #e3e3e3;
+$spacing-xs: 0.5rem;
+$spacing-s: 0.75rem;
+$spacing-m: 1rem;
+$spacing-l: 1.25rem;
+$spacing-xl: 1.5rem;
+$spacing-xxl: 2rem;
+
+* {
+  outline: none;
+  font-family: Avenir;
+}
+html,
+body {
+  margin: 0;
+}
+.app {
+  height: 100vh;
+}
+
+//components
+@import "./styles/common/index.scss";
+
+//pages
+@import "./styles/todos/todos.scss";
+
+@import "./styles/auth/auth.scss";

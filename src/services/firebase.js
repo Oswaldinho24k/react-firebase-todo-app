@@ -4,17 +4,15 @@ import "firebase/firestore";
 
 // Initialize Firebase
 // use ENVS
-const config = {
-  apiKey: "AIzaSyB-yUmhqRgvAvuyJvLGYuSRM7y6GnSqVOA",
-  authDomain: "oswaldinho-demos.firebaseapp.com",
-  databaseURL: "https://oswaldinho-demos.firebaseio.com",
-  projectId: "oswaldinho-demos",
-  storageBucket: "oswaldinho-demos.appspot.com",
-  messagingSenderId: "933598744807",
-  appId: "1:933598744807:web:6b4d5148f2263f191c9242",
-  measurementId: "G-R0LVJMXX6H",
+const firebaseConfig = {
+  apiKey: "AIzaSyBfDSYHl2GxahwUKvEBdlsyF19fcycptsg",
+  authDomain: "oswaldinho-demos-657b9.firebaseapp.com",
+  projectId: "oswaldinho-demos-657b9",
+  storageBucket: "oswaldinho-demos-657b9.appspot.com",
+  messagingSenderId: "135802538376",
+  appId: "1:135802538376:web:ea43c30b2fccf98ff4d23d",
 };
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 export const firestore = firebase.firestore();
 

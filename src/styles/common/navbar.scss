@@ -1,0 +1,35 @@
+// Nav
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: $spacing-l;
+  padding: $spacing-xs;
+  background: $primary-color;
+  color: $secondary-color;
+  height: 60px;
+  box-sizing: border-box;
+  @media (min-width: 768px) {
+    padding: $spacing-xs $spacing-xl;
+  }
+  & .userImage {
+    width: 30px;
+    border-radius: 50%;
+  }
+  & div {
+    display: flex;
+    align-items: center;
+  }
+  & div span {
+    font-size: $spacing-m;
+    margin: 0 $spacing-xs;
+  }
+  & a {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+}
+
+.divider {
+  margin: 0;
+}

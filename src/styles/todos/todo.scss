@@ -1,0 +1,88 @@
+.todo {
+  background: $secondary-color;
+  font-size: $spacing-m;
+  margin-bottom: $spacing-s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+  transition: all 0.3s ease;
+  position: relative;
+  @media (min-width: 768px) {
+    padding: $spacing-xs 0;
+  }
+  & .tag {
+    border-radius: 4px;
+    padding: $spacing-xs;
+    font-size: $spacing-xs;
+    color: $secondary-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $red-color;
+    @media (min-width: 768px) {
+      top: 50%;
+      left: 14%;
+    }
+  }
+  & .todoContent {
+    width: 85%;
+    margin: 0;
+    @media (min-width: 768px) {
+      width: 75%;
+    }
+  }
+  & .actions {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+  & .actions button {
+    font-size: $spacing-xs;
+    margin-bottom: $spacing-xs;
+    @media (min-width: 768px) {
+      font-size: $spacing-m;
+    }
+  }
+  & .todoText {
+    margin: 0;
+    @media (min-width: 768px) {
+      font-size: $spacing-m;
+    }
+  }
+  & .todoDate {
+    color: $primary-color;
+    font-size: $spacing-xs;
+    @media (min-width: 768px) {
+      font-size: $spacing-s;
+    }
+  }
+  & .editTodo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-size: $spacing-s;
+      margin-right: $spacing-xs;
+    }
+    & input.checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+
+      & :checked {
+        filter: grayscale(1);
+      }
+    }
+  }
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  color: $border-color;
+}

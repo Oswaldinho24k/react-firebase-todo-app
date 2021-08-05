@@ -11,17 +11,20 @@ function Todos() {
   const [sort, setSort] = useState("Newest");
   const currentUser = JSON.parse(localStorage.getItem("user"));
 
-  useEffect(() => {
-    firestore
-      .collection("todos")
-      .where("user", "==", currentUser?.uid)
-      .get()
-      .then((querySnapshot) => {
-        const todos = [];
-        querySnapshot.forEach((doc) => todos.push(doc.data()));
-        setTodos(todos);
-      });
-  });
+  useEffect(
+    () => {
+      firestore
+        .collection("todos")
+        .where("user", "==", currentUser?.uid)
+        .get()
+        .then((querySnapshot) => {
+          const todos = [];
+          querySnapshot.forEach((doc) => todos.push(doc.data()));
+          setTodos(todos);
+        });
+    },
+    [currentUser]
+  );
 
   const addTodo = (text) => {
     saveTodo({
