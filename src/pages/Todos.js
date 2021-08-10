@@ -62,7 +62,6 @@ function Todos() {
     saveTodo(todo).then(() => {
       setTodos((oldTodos) => [
         ...oldTodos.map((t) => {
-          console.log(t.id === todo.id);
           if (t.id === todo.id) return todo;
           else return t;
         }),
