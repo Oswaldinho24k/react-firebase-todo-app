@@ -27,6 +27,7 @@ function Todos() {
           setTodos(todos);
         });
     },
+    // eslint-disable-next-line
     [isWorldsTodo]
   );
 

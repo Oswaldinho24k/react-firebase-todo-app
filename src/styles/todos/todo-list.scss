@@ -1,12 +1,9 @@
 .todo-list {
   width: 100%;
-  height: calc(100vh - 228px);
+  height: calc(100vh - 213px);
   margin-top: $spacing-s;
   overflow-y: auto;
   box-sizing: border-box;
-  @media (min-width: 768px) {
-    height: calc(100vh - 213px);
-  }
 }
 .container {
   display: flex;

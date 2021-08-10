@@ -22,13 +22,12 @@ function TodoForm({
         <input
           disabled={isWorldsTodo}
           type="text"
-          className="input"
           rows="1"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder=" Enter your task"
           required
-          className={`${isWorldsTodo && "isDisabled"}`}
+          className={`input ${isWorldsTodo && "isDisabled"}`}
         />
         <button
           type="submit"
